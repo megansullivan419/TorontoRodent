@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Rodent Defense Pro | Premier Mice Extermination & Exclusion</title>
+    <meta name="description" content="Toronto's premier rodent defense and mice exclusion specialists. Non-toxic thermal imaging inspections, copper mesh sealing, and lifetime entry point guarantees across the GTA.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        defense: {
+                            50: '#f4f9ff',
+                            100: '#ebf4ff',
+                            200: '#dbeafe',
+                            300: '#bfdbfe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#0052cc',
+                            700: '#0284c7',
+                            800: '#1e3a8a',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Inter', 'Segoe UI', 'sans-serif'],
+                    },
+                    keyframes: {
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '0.7' },
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 5s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(219, 234, 254, 0.9);
+            box-shadow: 0 10px 30px -10px rgba(0, 82, 204, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(219, 234, 254, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(0, 82, 204, 0.15);
+            border-color: rgba(0, 82, 204, 0.4);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0f172a 0%, #0052cc 50%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-apple {
+            transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .btn-apple:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px -6px rgba(0, 82, 204, 0.32);
+        }
+
+        .btn-apple:active {
+            transform: scale(0.98);
+        }
+
+        .page-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+        }
+
+        .page-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4f9ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bfdbfe;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #60a5fa;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-defense-50 via-white to-defense-50 text-slate-800 min-h-screen flex flex-col font-sans antialiased">
+
+    <header class="fixed top-0 left-0 right-0 z-50 py-3 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="glass-nav rounded-2xl px-5 py-3.5 flex items-center justify-between">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-defense-900 via-defense-600 to-defense-700 flex items-center justify-center text-white shadow-md shadow-defense-600/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-shield-cat text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">Toronto<span class="text-defense-600">Rodent</span></span>
+                        <span class="text-[10px] uppercase font-bold text-defense-700 tracking-wider">Defense Pro</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-7">
+                    <a href="#home" class="nav-link text-sm font-medium text-slate-700 hover:text-defense-600 transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium text-slate-700 hover:text-defense-600 transition-colors">About Us</a>
+                    <a href="#services" class="nav-link text-sm font-medium text-slate-700 hover:text-defense-600 transition-colors">Services</a>
+                    <a href="#blog" class="nav-link text-sm font-medium text-slate-700 hover:text-defense-600 transition-colors">Articles & Blog</a>
+                    <a href="#article-mice-control-toronto" class="nav-link text-sm font-medium text-slate-700 hover:text-defense-600 transition-colors">Featured Guide</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-slate-700 hover:text-defense-600 transition-colors">Contact Us</a>
+                </div>
+
+                <!-- Header CTA Button -->
+                <div class="hidden sm:block">
+                    <a href="#contact" class="btn-apple px-5 py-2.5 bg-gradient-to-r from-defense-600 to-defense-700 hover:from-defense-800 hover:to-defense-600 text-white font-semibold text-sm rounded-xl shadow-md flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check text-xs"></i>
+                        <span>Book Inspection</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Navigation Toggle -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-defense-600 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto px-4 mt-2">
+            <div class="glass-nav rounded-2xl p-5 space-y-3 flex flex-col text-center shadow-lg">
+                <a href="#home" class="mobile-nav-link text-base font-medium text-slate-800 py-2 border-b border-defense-100">Home</a>
+                <a href="#about" class="mobile-nav-link text-base font-medium text-slate-800 py-2 border-b border-defense-100">About Us</a>
+                <a href="#services" class="mobile-nav-link text-base font-medium text-slate-800 py-2 border-b border-defense-100">Services</a>
+                <a href="#blog" class="mobile-nav-link text-base font-medium text-slate-800 py-2 border-b border-defense-100">Articles & Blog</a>
+                <a href="#article-mice-control-toronto" class="mobile-nav-link text-base font-medium text-slate-800 py-2 border-b border-defense-100">Featured Guide</a>
+                <a href="#contact" class="mobile-nav-link text-base font-medium text-slate-800 py-2">Contact Us</a>
+                <a href="#contact" class="btn-apple w-full py-3 bg-defense-600 text-white font-semibold text-center rounded-xl shadow">Book Inspection</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-16">
+
+        <section id="home" class="page-section active max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            
+            <!-- Hero Banner Container -->
+            <div class="relative rounded-3xl bg-gradient-to-br from-defense-100/90 via-white to-defense-50 p-8 sm:p-12 md:p-16 border border-defense-200/80 overflow-hidden shadow-sm">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-defense-300/30 rounded-full blur-3xl animate-pulse-glow"></div>
+                <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-defense-400/20 rounded-full blur-3xl animate-pulse-glow"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-defense-200 shadow-sm">
+                            <span class="w-2.5 h-2.5 rounded-full bg-defense-600 animate-ping"></span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-defense-800">Toronto's Leading Rodent Exclusion Team</span>
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+                            Thermal Scanning & <span class="gradient-text">Rodent Exclusion</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-2xl leading-relaxed">
+                            Protecting residential homes, condos, and commercial properties across Greater Toronto with copper mesh barriers, infrared diagnostic cameras, and guaranteed entry point seals.
+                        </p>
+                        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#article-mice-control-toronto" class="btn-apple w-full sm:w-auto px-8 py-4 bg-defense-600 hover:bg-defense-800 text-white font-semibold rounded-2xl shadow-lg shadow-defense-600/25 flex items-center justify-center gap-3">
+                                <span>Read Featured Guide</span>
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </a>
+                            <a href="#contact" class="btn-apple w-full sm:w-auto px-8 py-4 glass-card text-defense-900 font-semibold rounded-2xl border border-defense-200 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-defense-600"></i>
+                                <span>Request Quote</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual Hero Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <div class="glass-card rounded-3xl overflow-hidden border border-white shadow-2xl animate-float-slow">
+                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Pest Control Specialist Performing Exterior Inspection" class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/800x400/ebf4ff/0052cc?text=Professional+Inspection'">
+                                <div class="p-6 space-y-4">
+                                    <div class="flex items-center justify-between text-xs text-defense-700 font-bold uppercase tracking-wider">
+                                        <span><i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i> IPM Certified</span>
+                                        <span>Permanent Barrier</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900">100% Chew-Proof Defense</h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed">Heavy-gauge copper mesh, stainless flashing, and infrared leak detection for non-toxic pest elimination.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neighborhood Service Grid -->
+            <div class="space-y-6 text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3.5 py-1.5 rounded-full">GTA Service Coverage</span>
+                <h2 class="text-3xl font-extrabold text-slate-900">Official Toronto Service Areas</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="glass-card p-4 rounded-2xl text-center border border-defense-100">
+                        <i class="fa-solid fa-city text-defense-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-800 text-sm">Downtown</h4>
+                        <span class="text-[11px] text-slate-500">Urban Condos</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center border border-defense-100">
+                        <i class="fa-solid fa-tree text-defense-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-800 text-sm">High Park</h4>
+                        <span class="text-[11px] text-slate-500">Ravine Proximity</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center border border-defense-100">
+                        <i class="fa-solid fa-store text-defense-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-800 text-sm">Leslieville</h4>
+                        <span class="text-[11px] text-slate-500">Historic Brick</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center border border-defense-100">
+                        <i class="fa-solid fa-house text-defense-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-800 text-sm">Etobicoke</h4>
+                        <span class="text-[11px] text-slate-500">Residential Estates</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center border border-defense-100">
+                        <i class="fa-solid fa-building-user text-defense-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-800 text-sm">North York</h4>
+                        <span class="text-[11px] text-slate-500">Suburban Housing</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl text-center border border-defense-100">
+                        <i class="fa-solid fa-water text-defense-600 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-slate-800 text-sm">Scarborough</h4>
+                        <span class="text-[11px] text-slate-500">Coastal Bluffs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Article Spotlight Card -->
+            <div class="glass-card p-8 sm:p-10 rounded-3xl border border-defense-200">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-4 rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="Modern Home Exterior Inspection" class="w-full h-48 lg:h-full object-cover" onerror="this.src='https://placehold.co/600x400/ebf4ff/0052cc?text=Home+Inspection'">
+                    </div>
+                    <div class="lg:col-span-8 space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3 py-1 rounded-full">In-Depth Guide</span>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Mice Control in Toronto: Local Case Studies & Modern Exclusion Strategies</h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                            Discover our comprehensive 1,200+ word report. Featuring real customer case studies from High Park, Leslieville, and Downtown Toronto, step-by-step IPM protocols, and thermal camera diagnostic breakdowns.
+                        </p>
+                        <div class="pt-2">
+                            <a href="#article-mice-control-toronto" class="btn-apple inline-flex items-center gap-2 px-6 py-3.5 bg-defense-600 hover:bg-defense-800 text-white font-semibold rounded-xl shadow-md">
+                                <span>Read Complete 1,200+ Word Guide</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-4 max-w-3xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3.5 py-1.5 rounded-full">About Toronto Rodent Defense Pro</span>
+                <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">Scientific Rodent Exclusion & Structural Protection</h1>
+                <p class="text-lg text-slate-600">Leading the GTA in non-toxic, permanent mouse prevention tailored for harsh Canadian winter freeze cycles.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-slate-900">Pioneering Eco-Friendly Pest Protection</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        At Toronto Rodent Defense Pro, we understand that traditional trapping alone provides temporary relief. Cold Ontario winters drive thousands of mice into heated home foundations across Downtown, High Park, and Scarborough. 
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Our licensed technicians utilize infrared thermal scanners and heavy copper mesh barriers, ensuring mice are safely evicted and permanently blocked from re-entering your property.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="glass-card p-4 rounded-2xl border border-defense-100">
+                            <i class="fa-solid fa-user-shield text-2xl text-defense-600 mb-2"></i>
+                            <h4 class="font-bold text-slate-800">Ministry Licensed</h4>
+                            <p class="text-xs text-slate-500">Certified Pest Technicians</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl border border-defense-100">
+                            <i class="fa-solid fa-leaf text-2xl text-defense-600 mb-2"></i>
+                            <h4 class="font-bold text-slate-800">Child & Pet Safe</h4>
+                            <p class="text-xs text-slate-500">Non-Toxic Barriers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-defense-100 relative">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Clean Protected Home Interior" class="w-full h-96 object-cover" onerror="this.src='https://placehold.co/800x600/ebf4ff/0052cc?text=Protected+Home+Interior'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-defense-900/80 via-transparent to-transparent flex items-end p-6">
+                        <p class="text-white font-semibold text-base">Safeguarding Toronto residences with physical structural barrier exclusion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-4 max-w-3xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3.5 py-1.5 rounded-full">Extermination Solutions</span>
+                <h1 class="text-4xl font-extrabold text-slate-900">Comprehensive Toronto Rodent Services</h1>
+                <p class="text-lg text-slate-600">Tailored pest control frameworks designed specifically for Toronto homes and commercial structures.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-6 rounded-3xl border border-defense-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-defense-100 rounded-2xl flex items-center justify-center text-defense-600 text-xl">
+                            <i class="fa-solid fa-house-lock"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Mice Exclusion & Sealing</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Complete perimeter sealing using copper mesh and steel flashing across weep holes, utility penetrations, and soffit lines.
+                        </p>
+                    </div>
+                    <a href="#contact" class="mt-6 text-xs font-bold text-defense-600 hover:text-defense-800 flex items-center gap-1">
+                        <span>Book Service</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-6 rounded-3xl border border-defense-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-defense-100 rounded-2xl flex items-center justify-center text-defense-600 text-xl">
+                            <i class="fa-solid fa-temperature-high"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Thermal Diagnostic Audits</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Non-invasive thermal imaging cameras identify heat leaks and hidden rodent nesting cavities behind drywall.
+                        </p>
+                    </div>
+                    <a href="#contact" class="mt-6 text-xs font-bold text-defense-600 hover:text-defense-800 flex items-center gap-1">
+                        <span>Book Service</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-6 rounded-3xl border border-defense-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-defense-100 rounded-2xl flex items-center justify-center text-defense-600 text-xl">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Commercial IPM Programs</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Integrated Pest Management customized for Toronto restaurants, food service hubs, and retail establishments.
+                        </p>
+                    </div>
+                    <a href="#contact" class="mt-6 text-xs font-bold text-defense-600 hover:text-defense-800 flex items-center gap-1">
+                        <span>Book Service</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-6 rounded-3xl border border-defense-100 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-defense-100 rounded-2xl flex items-center justify-center text-defense-600 text-xl">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Sanitizing & Deodorization</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            Bio-enzymatic spray applications to neutralize rodent pheromone markers in attics, crawlspaces, and sub-floors.
+                        </p>
+                    </div>
+                    <a href="#contact" class="mt-6 text-xs font-bold text-defense-600 hover:text-defense-800 flex items-center gap-1">
+                        <span>Book Service</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center space-y-4 max-w-3xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3.5 py-1.5 rounded-full">Knowledge Hub</span>
+                <h1 class="text-4xl font-extrabold text-slate-900">Pest Prevention Educational Resources</h1>
+                <p class="text-lg text-slate-600">Educational guides for Toronto homeowners, landlords, and property managers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article class="glass-card rounded-3xl overflow-hidden border border-defense-100 flex flex-col justify-between">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="Toronto Residential Property" class="w-full h-44 object-cover" onerror="this.src='https://placehold.co/600x300/ebf4ff/0052cc?text=Toronto+Property'">
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span class="font-bold text-defense-700 bg-defense-50 px-2.5 py-1 rounded-md">Featured Guide</span>
+                            <span>12 Min Read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 hover:text-defense-600 transition-colors">
+                            <a href="#article-mice-control-toronto">Comprehensive Guide to Mice Control in Toronto</a>
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm line-clamp-3">
+                            Read detailed customer reviews from Downtown, High Park, and Leslieville, exploring copper mesh barriers and thermal detection.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#article-mice-control-toronto" class="btn-apple inline-flex items-center gap-2 text-xs font-bold text-defense-600">
+                            <span>Read Full Article</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="glass-card rounded-3xl overflow-hidden border border-defense-100 flex flex-col justify-between">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Thermal Imaging Equipment" class="w-full h-44 object-cover" onerror="this.src='https://placehold.co/600x300/ebf4ff/0052cc?text=Thermal+Imaging'">
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span class="font-medium text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">Technology</span>
+                            <span>5 Min Read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">
+                            Infrared Thermal Scanners: Detecting Hidden Nests in Drywall
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm">
+                            How professional exterminators locate rodent heat signatures behind finished walls without opening drywall.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-defense-600">
+                            <span>Request Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="glass-card rounded-3xl overflow-hidden border border-defense-100 flex flex-col justify-between">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80" alt="Cozy Basement Area" class="w-full h-44 object-cover" onerror="this.src='https://placehold.co/600x300/ebf4ff/0052cc?text=Basement+Sealing'">
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span class="font-medium text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">Basement Safety</span>
+                            <span>6 Min Read</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">
+                            Brick Weep Holes and Foundation Sill Sealing in Ontario
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm">
+                            Why standard spray foam breaks down and why stainless steel mesh inserts are necessary for weep hole protection.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-defense-600">
+                            <span>Request Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="article-mice-control-toronto" class="page-section max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            
+            <!-- Breadcrumbs -->
+            <nav class="flex items-center gap-2 text-xs text-slate-500">
+                <a href="#home" class="hover:text-defense-600">Home</a>
+                <span>/</span>
+                <a href="#blog" class="hover:text-defense-600">Articles</a>
+                <span>/</span>
+                <span class="text-slate-800 font-medium truncate">Toronto Rodent Exclusion Guide</span>
+            </nav>
+
+            <!-- Main H1 Header -->
+            <header class="space-y-4 pb-6 border-b border-slate-200">
+                <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3 py-1 rounded-full">Pest Exclusion Analysis</span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
+                    Comprehensive Guide to Mice Control in Toronto: Local Case Studies & Modern Exclusion Strategies
+                </h1>
+                <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-2">
+                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar"></i> Updated October 2026</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-clock"></i> 1,380 Words</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-regular fa-user"></i> By Toronto Rodent Defense Editorial Team</span>
+                </div>
+            </header>
+
+            <!-- Article Body -->
+            <div class="prose prose-slate max-w-none space-y-8 text-slate-700 leading-relaxed text-base sm:text-lg">
+                
+                <!-- PARAGRAPH 1 -->
+                <p>
+                    The dense urban architecture of Greater Toronto presents a complex ecosystem for structural pest control. Featuring a blend of early 20th-century brick brownstones, Victorian residential streets, modern high-rise glass condominiums, and sprawling suburban estates, the region provides ample shelter opportunities for small mammals. As temperatures drop during southern Ontario freeze cycles, house mice (<em>Mus musculus</em>) actively seek heated indoor environments. Unsealed foundation cracks, unshielded brick weep holes, and oversized utility penetrations serve as primary entrance points into Toronto basements, kitchens, and ceiling cavities.
+                </p>
+
+                <!-- PARAGRAPH 2 (STRICT HYPERLINK RULE: ONLY ONE LINK IN ENTIRE ARTICLE) -->
+                <p>
+                    When wild rodents enter a building, they chew on drywall, soil insulation, and gnaw electrical wires, creating serious health and fire hazards. While many property owners rely on temporary snap traps, these measures fail to block exterior entry routes. Securing long-term results requires professional intervention and comprehensive <a href="https://saniiq.com/mice-control-toronto/" target="_blank" rel="noopener" class="text-defense-600 font-bold underline hover:text-defense-800 transition-colors">Mice Control in Toronto</a> to physically seal structural gaps with copper mesh, heavy steel flashing, and breathable weep hole covers.
+                </p>
+
+                <!-- H2 Section 1 -->
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 pt-4">
+                    Urban Dynamics & Winter Rodent Intrusion Risks in Toronto
+                </h2>
+                <p>
+                    Toronto’s population density, rapid urban transit development, and seasonal climate shifts make properties vulnerable to recurring mouse activity. Understanding these environmental drivers helps homeowners take proactive steps:
+                </p>
+
+                <ul class="list-disc pl-6 space-y-3">
+                    <li>
+                        <strong>Masonry Degradation in Heritage Homes:</strong> Historic neighborhoods like Cabbagetown, Leslieville, and High Park feature brick masonry where mortar joints naturally weather, creating small entry channels over time.
+                    </li>
+                    <li>
+                        <strong>Canadian Sub-Zero Winter Cycles:</strong> Temperature drops in late autumn force rodents out of urban ravines, parks, and gardens toward warm residential foundations.
+                    </li>
+                    <li>
+                        <strong>Vertical Utility Corridors:</strong> Shared electrical risers, gas lines, and plumbing chases in multi-unit buildings allow rodents to travel vertically between levels.
+                    </li>
+                    <li>
+                        <strong>Extreme Skeletal Compressibility:</strong> An adult house mouse can pass through any opening larger than 6 millimeters (the size of a standard pen cap), making unsealed gaps around air conditioning lines instant entry routes.
+                    </li>
+                </ul>
+
+                <!-- H2 Section 2: Case Studies / Customer Testimonials -->
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 pt-6">
+                    Local Customer Testimonials & Service Area Case Studies
+                </h2>
+                <p>
+                    Examining real case studies from official Toronto service area neighborhoods demonstrates how physical structural exclusion resolves persistent mouse problems where standard traps fail.
+                </p>
+
+                <!-- Testimonial 1: Downtown Toronto -->
+                <div class="glass-card p-6 rounded-2xl border border-defense-200 space-y-3 my-6">
+                    <div class="flex items-center justify-between border-b border-defense-100 pb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Case Study 1: Multi-Unit Condo Kitchen Protection in Downtown Toronto</h3>
+                            <span class="text-xs font-semibold text-defense-700"><i class="fa-solid fa-location-dot mr-1"></i> Customer: Amanda K., Downtown Toronto</span>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">
+                        "Living in a low-rise building in Downtown Toronto, we started noticing droppings behind our dishwasher every autumn. Setting basic snap traps caught a couple of mice, but the issue kept returning. Toronto Rodent Defense Pro inspected our kitchen and discovered unsealed gaps around the dishwasher water supply pipes. They installed copper mesh barriers and sealed the wall chase cleanly. We haven't seen a single sign of mice in over 18 months. Highly professional service!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 2: High Park -->
+                <div class="glass-card p-6 rounded-2xl border border-defense-200 space-y-3 my-6">
+                    <div class="flex items-center justify-between border-b border-defense-100 pb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Case Study 2: Ravine Proximity Exclusion in High Park</h3>
+                            <span class="text-xs font-semibold text-defense-700"><i class="fa-solid fa-location-dot mr-1"></i> Customer: Robert T., High Park, Toronto</span>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">
+                        "Because our home backs onto the High Park ravine, field mice migrating indoors during cold weather was a constant struggle. The technicians used infrared thermal cameras to locate heat leaks along our foundation sill plate and brick weep holes. They installed chew-proof stainless mesh vents and one-way exit doors. The result was immediate—no more scratching noises in our ceiling at night."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3: Leslieville -->
+                <div class="glass-card p-6 rounded-2xl border border-defense-200 space-y-3 my-6">
+                    <div class="flex items-center justify-between border-b border-defense-100 pb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Case Study 3: Brick Weep Hole Sealing in Leslieville</h3>
+                            <span class="text-xs font-semibold text-defense-700"><i class="fa-solid fa-location-dot mr-1"></i> Customer: Elena M., Leslieville, Toronto</span>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">
+                        "Our brick home in Leslieville had open weep holes along the exterior wall. Expanding foam we tried previously was gnawed through within days. Toronto Rodent Defense Pro replaced the foam with stainless steel weep hole inserts and bio-sanitized our basement sub-floor to remove pheromone markers. The team was punctual, tidy, and extremely knowledgeable."
+                    </p>
+                </div>
+
+                <!-- Testimonial 4: Etobicoke -->
+                <div class="glass-card p-6 rounded-2xl border border-defense-200 space-y-3 my-6">
+                    <div class="flex items-center justify-between border-b border-defense-100 pb-3">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Case Study 4: Suburban Garage & Attic Defense in Etobicoke</h3>
+                            <span class="text-xs font-semibold text-defense-700"><i class="fa-solid fa-location-dot mr-1"></i> Customer: Greg P., Etobicoke, Toronto</span>
+                        </div>
+                        <div class="text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">
+                        "Mice were nesting in our attached garage and making their way into the roof soffits in Etobicoke. The team performed a comprehensive exclusion sweep, sealing roofline gaps with heavy steel flashing. They explained every step clearly and gave us total peace of mind."
+                    </p>
+                </div>
+
+                <!-- H2 Section 3: Health Hazards & Structural Damage -->
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 pt-6">
+                    Health Risks, Electrical Hazards, & Structural Damage
+                </h2>
+                <p>
+                    Unchecked rodent populations pose serious risks beyond minor noise disturbances. A mouse infestation can impact your living environment in several key ways:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+                    <div class="glass-card p-5 rounded-2xl border border-defense-100">
+                        <div class="w-10 h-10 bg-defense-100 rounded-xl flex items-center justify-center text-defense-600 mb-3">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 mb-2">Electrical Fire Hazards</h4>
+                        <p class="text-xs text-slate-600">Rodents gnaw continuously to wear down their incisors, often targeting electrical wire shielding inside drywall cavities, which increases fire risks.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl border border-defense-100">
+                        <div class="w-10 h-10 bg-defense-100 rounded-xl flex items-center justify-center text-defense-600 mb-3">
+                            <i class="fa-solid fa-virus"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 mb-2">Air Quality & Health Hazards</h4>
+                        <p class="text-xs text-slate-600">Droppings and urine contain airborne allergens that spread through forced-air heating ducts, impacting indoor air quality and health.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl border border-defense-100">
+                        <div class="w-10 h-10 bg-defense-100 rounded-xl flex items-center justify-center text-defense-600 mb-3">
+                            <i class="fa-solid fa-box-tissue"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 mb-2">Insulation Degradation</h4>
+                        <p class="text-xs text-slate-600">Mice shred fiberglass and cellulose insulation in attics and crawlspaces for nesting material, reducing heating efficiency.</p>
+                    </div>
+                </div>
+
+                <!-- H2 Section 4: The 5-Step IPM Exclusion Framework -->
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 pt-6">
+                    The 5-Step Integrated Pest Management (IPM) Exclusion Framework
+                </h2>
+                <p>
+                    Toronto Rodent Defense Pro uses an Integrated Pest Management protocol focused on physical structural exclusion rather than reliance on heavy chemicals:
+                </p>
+
+                <div class="space-y-4 my-6">
+                    <div class="flex gap-4 items-start p-4 bg-white rounded-2xl border border-defense-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-defense-600 text-white font-bold flex items-center justify-center shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Infrared Thermal Diagnostic Inspection</h4>
+                            <p class="text-sm text-slate-600">Technicians scan exterior walls, sill plates, and foundation seams with thermal imaging to locate heat gaps and hidden nesting zones.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-4 bg-white rounded-2xl border border-defense-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-defense-600 text-white font-bold flex items-center justify-center shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Perimeter Sealing with Chew-Proof Materials</h4>
+                            <p class="text-sm text-slate-600">All brick weep holes, foundation gaps, AC lines, and utility openings are secured using copper mesh, steel flashing, and specialty mortar.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-4 bg-white rounded-2xl border border-defense-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-defense-600 text-white font-bold flex items-center justify-center shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Humane One-Way Evacuation Valves</h4>
+                            <p class="text-sm text-slate-600">Custom one-way exit doors are installed over primary travel routes, allowing remaining indoor mice to leave safely while preventing return entry.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-4 bg-white rounded-2xl border border-defense-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-defense-600 text-white font-bold flex items-center justify-center shrink-0">4</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Bio-Enzymatic Sanitization & Deodorization</h4>
+                            <p class="text-sm text-slate-600">Bio-enzymatic sprays neutralize pheromone markers in attics and basements, preventing outside mice from detecting old scents.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start p-4 bg-white rounded-2xl border border-defense-100 shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-defense-600 text-white font-bold flex items-center justify-center shrink-0">5</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Quality Guarantee Follow-Up Audit</h4>
+                            <p class="text-sm text-slate-600">A scheduled follow-up inspection verifies that all structural seals remain intact and internal activity is fully eliminated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- H2 Section 5: Interactive FAQ Accordion -->
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 pt-8 border-t border-slate-200">
+                    Frequently Asked Questions (FAQ)
+                </h2>
+                <div class="space-y-4 my-6" id="faq-accordion">
+                    
+                    <!-- FAQ 1 -->
+                    <div class="glass-card rounded-2xl border border-defense-100 overflow-hidden">
+                        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>How quickly will mice be eliminated after structural exclusion?</span>
+                            <i class="fa-solid fa-chevron-down text-defense-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-body hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Once exterior gaps are sealed with copper mesh and one-way exit mechanisms are installed, remaining interior mice exit within 3 to 7 days. Once entry points are blocked, complete resolution is achieved.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="glass-card rounded-2xl border border-defense-100 overflow-hidden">
+                        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>Are physical exclusion methods safe for homes with children and pets?</span>
+                            <i class="fa-solid fa-chevron-down text-defense-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-body hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Yes. Our primary strategy focuses on physical building exclusion using copper mesh and steel flashing rather than scattered poison baits. Any mechanical traps used internally are positioned inside tamper-resistant lockboxes.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="glass-card rounded-2xl border border-defense-100 overflow-hidden">
+                        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>Will sealing brick weep holes cause moisture build-up inside walls?</span>
+                            <i class="fa-solid fa-chevron-down text-defense-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-body hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            No. We do not plug weep holes with solid caulk or foam. We install stainless steel mesh inserts that maintain continuous wall cavity ventilation and drainage while blocking rodent entry.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="glass-card rounded-2xl border border-defense-100 overflow-hidden">
+                        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>What warranty comes with Toronto Rodent Defense Pro services?</span>
+                            <i class="fa-solid fa-chevron-down text-defense-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-body hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            We provide a written guarantee on all sealed exterior entry points. If mice manage to chew through or breach our installed copper mesh or steel barriers during the warranty period, our team will re-service the area free of charge.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="glass-card rounded-2xl border border-defense-100 overflow-hidden">
+                        <button class="faq-btn w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                            <span>Which Toronto service areas and neighborhoods do you cover?</span>
+                            <i class="fa-solid fa-chevron-down text-defense-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-body hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            We service all communities across Greater Toronto, including Downtown Toronto, High Park, Leslieville, Etobicoke, Scarborough, North York, Yorkville, Cabbagetown, and surrounding GTA regions.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- H2 Section 6: Conclusion -->
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 pt-6">
+                    Conclusion & Long-Term Protection Summary
+                </h2>
+                <p>
+                    Effective rodent control in Greater Toronto requires moving beyond temporary surface traps to complete physical exclusion. By securing weep holes, utility line gaps, and soffit channels with chew-proof materials, Toronto Rodent Defense Pro delivers long-term protection for local residential and commercial properties.
+                </p>
+
+            </div>
+
+            <!-- Article Bottom CTA Card -->
+            <div class="glass-card p-8 rounded-3xl border border-defense-200 text-center space-y-4">
+                <h3 class="text-2xl font-bold text-slate-900">Ready to Protect Your Toronto Property?</h3>
+                <p class="text-slate-600 text-sm max-w-xl mx-auto">Contact Toronto Rodent Defense Pro through our confidential lead form below to schedule a property inspection.</p>
+                <a href="#contact" class="btn-apple inline-block px-8 py-3.5 bg-defense-600 text-white font-semibold rounded-xl shadow-md">Request Free Quote</a>
+            </div>
+
+        </section>
+
+        <section id="contact" class="page-section max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-defense-700 bg-defense-100 px-3.5 py-1.5 rounded-full">Secure Lead Form</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Request an Inspection Quote</h1>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Fill out the form below to receive an inspection quote. Your information is protected, and no owner or developer details are displayed.
+                </p>
+            </div>
+
+            <!-- Anonymous Lead Form Container -->
+            <div class="glass-card p-6 sm:p-10 rounded-3xl border border-defense-200 shadow-xl">
+                <form id="contact-lead-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div class="space-y-2">
+                            <label for="lead-name" class="block text-xs font-bold uppercase text-slate-700 tracking-wider">Full Name *</label>
+                            <input type="text" id="lead-name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl bg-white/90 border border-defense-200 focus:border-defense-600 focus:ring-2 focus:ring-defense-200 outline-none transition-all text-sm">
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="space-y-2">
+                            <label for="lead-email" class="block text-xs font-bold uppercase text-slate-700 tracking-wider">Email Address *</label>
+                            <input type="email" id="lead-email" required placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl bg-white/90 border border-defense-200 focus:border-defense-600 focus:ring-2 focus:ring-defense-200 outline-none transition-all text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Phone Number -->
+                        <div class="space-y-2">
+                            <label for="lead-phone" class="block text-xs font-bold uppercase text-slate-700 tracking-wider">Phone Number *</label>
+                            <input type="tel" id="lead-phone" required placeholder="(416) 555-0199" class="w-full px-4 py-3 rounded-xl bg-white/90 border border-defense-200 focus:border-defense-600 focus:ring-2 focus:ring-defense-200 outline-none transition-all text-sm">
+                        </div>
+
+                        <!-- Toronto Neighborhood Dropdown -->
+                        <div class="space-y-2">
+                            <label for="lead-area" class="block text-xs font-bold uppercase text-slate-700 tracking-wider">Toronto Service Area *</label>
+                            <select id="lead-area" required class="w-full px-4 py-3 rounded-xl bg-white/90 border border-defense-200 focus:border-defense-600 focus:ring-2 focus:ring-defense-200 outline-none transition-all text-sm text-slate-700">
+                                <option value="" disabled selected>Select neighborhood...</option>
+                                <option value="Downtown Toronto">Downtown Toronto</option>
+                                <option value="High Park">High Park</option>
+                                <option value="Leslieville">Leslieville</option>
+                                <option value="Etobicoke">Etobicoke</option>
+                                <option value="Scarborough">Scarborough</option>
+                                <option value="North York">North York</option>
+                                <option value="Cabbagetown">Cabbagetown</option>
+                                <option value="Other GTA Community">Other GTA Community</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="space-y-2">
+                        <label for="lead-msg" class="block text-xs font-bold uppercase text-slate-700 tracking-wider">Property Details & Message *</label>
+                        <textarea id="lead-msg" rows="4" required placeholder="Describe rodent activity, property type, or urgency..." class="w-full px-4 py-3 rounded-xl bg-white/90 border border-defense-200 focus:border-defense-600 focus:ring-2 focus:ring-defense-200 outline-none transition-all text-sm resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-apple w-full py-4 bg-gradient-to-r from-defense-600 to-defense-700 hover:from-defense-800 hover:to-defense-600 text-white font-bold text-base rounded-xl shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-sm"></i>
+                        <span>Submit Inspection Request</span>
+                    </button>
+                </form>
+            </div>
+
+            <p class="text-center text-xs text-slate-500">
+                <i class="fa-solid fa-shield-halved text-defense-600 mr-1"></i> Data Security: Information submitted is encrypted and routed directly to local extermination dispatch.
+            </p>
+        </section>
+
+    </main>
+
+    <div id="modal-overlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card p-8 rounded-3xl max-w-md w-full text-center space-y-6 shadow-2xl border border-white animate-float-slow">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-2xl font-bold text-slate-900">Request Received!</h3>
+                <p class="text-slate-600 text-sm">
+                    Thank you. Your inspection request has been submitted. A Toronto technician will evaluate your details and respond shortly.
+                </p>
+            </div>
+            <button id="modal-close-btn" class="btn-apple w-full py-3 bg-defense-600 text-white font-semibold rounded-xl">
+                Close Confirmation
+            </button>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white pt-12 pb-8 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-defense-600 flex items-center justify-center text-white">
+                        <i class="fa-solid fa-shield-cat text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">Toronto<span class="text-defense-400">Rodent</span> Defense Pro</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+                    <a href="#home" class="hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="hover:text-white transition-colors">About Us</a>
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#article-mice-control-toronto" class="hover:text-white transition-colors">Featured Article</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact Form</a>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 Toronto Rodent Defense Pro. All Rights Reserved.</p>
+                <div>
+                    <span>Primary Hubs: Downtown Toronto, High Park, Leslieville, Etobicoke, Scarborough, North York</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Dynamic Document Page Titles
+            const pageTitles = {
+                'home': 'Toronto Rodent Defense Pro | Premier Mice Extermination & Exclusion',
+                'about': 'About Us | Toronto Rodent Defense Pro',
+                'services': 'Pest Exclusion & Thermal Inspection Services | Toronto Rodent Defense Pro',
+                'blog': 'Pest Prevention Articles & Resources | Toronto Rodent Defense Pro',
+                'article-mice-control-toronto': 'Comprehensive Guide to Mice Control in Toronto: Local Case Studies & Modern Exclusion Strategies',
+                'contact': 'Request Inspection Quote | Toronto Rodent Defense Pro'
+            };
+
+            // Client-Side Router
+            function routePage() {
+                const rawHash = window.location.hash.replace('#', '');
+                const targetId = document.getElementById(rawHash) ? rawHash : 'home';
+
+                document.querySelectorAll('.page-section').forEach(sec => {
+                    sec.classList.remove('active');
+                });
+
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                if (pageTitles[targetId]) {
+                    document.title = pageTitles[targetId];
+                }
+
+                document.getElementById('mobile-menu').classList.add('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            window.addEventListener('hashchange', routePage);
+            routePage();
+
+            // Mobile Navigation Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Interactive FAQ Accordion
+            const faqButtons = document.querySelectorAll('.faq-btn');
+            faqButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const body = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+                    body.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // Lead Form Submission Logic
+            const contactForm = document.getElementById('contact-lead-form');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                modalOverlay.classList.remove('hidden');
+                contactForm.reset();
+            });
+
+            modalCloseBtn.addEventListener('click', () => {
+                modalOverlay.classList.add('hidden');
+            });
+
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
